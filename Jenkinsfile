@@ -7,7 +7,7 @@ pipeline {
                 sh 'whoami'
                 sh '''
                     mkdir -p devops 
-                    cd devops/Node.js-App-Deploy-Github-Action
+                    cd devops
                     docker build -t node-app .
                 '''
                 echo 'Image created successfully'
