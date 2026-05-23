@@ -13,7 +13,10 @@ pipeline {
         }
         stage('Running container') {
             steps {
-                sh 'docker run -d -p 8000:8080 node-app'
+                sh '''
+                    docker rm -f node-app-container || true
+                    docker run -d --name node-app-container -p 8000:8080 node-app
+                '''
                 echo 'Container started successfully'
             }
         }
