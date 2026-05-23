@@ -6,8 +6,6 @@ pipeline {
             steps {
                 sh 'whoami'
                 sh '''
-                    mkdir -p devops 
-                    cd devops
                     docker build -t node-app .
                 '''
                 echo 'Image created successfully'
