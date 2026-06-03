@@ -21,9 +21,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             set -e
-
+          
+            cd /home/ubuntu/node-app
+            git clone https://github.com/omkarsharma2821/Node.js-App-Deploy-Github-Action.git
             cd /home/ubuntu/node-app/Node.js-App-Deploy-Github-Action
-
             echo "Pulling latest code..."
             git pull origin main
 
